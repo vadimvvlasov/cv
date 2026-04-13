@@ -791,14 +791,9 @@ function EducationSection() {
         <div>
           <h3 className={`text-xl font-semibold ${dark ? 'text-slate-100' : 'text-slate-900'}`}>Ural Federal University (UrFU)</h3>
           <p className={`mt-1 text-sm ${dark ? 'text-slate-400' : 'text-slate-500'}`}>Yekaterinburg, Russia</p>
-          <div className="mt-3 flex flex-wrap gap-2">
-            <span className={`rounded-lg border px-3 py-1 text-xs font-medium ${dark ? 'border-white/10 bg-white/5 text-slate-300' : 'border-slate-200 bg-slate-50 text-slate-700'}`}>
-              🎓 MSc — Institute of Physics and Technology
-            </span>
-            <span className={`rounded-lg border px-3 py-1 text-xs font-medium ${dark ? 'border-white/10 bg-white/5 text-slate-300' : 'border-slate-200 bg-slate-50 text-slate-700'}`}>
-              🔬 Dept. of Experimental Physics
-            </span>
-          </div>
+          <span className={`mt-3 inline-flex items-center gap-1.5 rounded-lg border px-3 py-1 text-xs font-medium ${dark ? 'border-white/10 bg-white/5 text-slate-300' : 'border-slate-200 bg-slate-50 text-slate-700'}`}>
+            🎓 MSc — Physics & Technology, Experimental Physics
+          </span>
         </div>
       </div>
     </div>
