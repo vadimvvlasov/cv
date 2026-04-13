@@ -793,10 +793,10 @@ function EducationSection() {
           <p className={`mt-1 text-sm ${dark ? 'text-slate-400' : 'text-slate-500'}`}>Yekaterinburg, Russia</p>
           <div className="mt-3 flex flex-wrap gap-2">
             <span className={`rounded-lg border px-3 py-1 text-xs font-medium ${dark ? 'border-white/10 bg-white/5 text-slate-300' : 'border-slate-200 bg-slate-50 text-slate-700'}`}>
-              🎓 MSc in Engineering
+              🎓 MSc — Institute of Physics and Technology
             </span>
             <span className={`rounded-lg border px-3 py-1 text-xs font-medium ${dark ? 'border-white/10 bg-white/5 text-slate-300' : 'border-slate-200 bg-slate-50 text-slate-700'}`}>
-              📋 Aspirantura — Pipeline transport, diagnostics & modelling
+              🔬 Dept. of Experimental Physics
             </span>
           </div>
         </div>
