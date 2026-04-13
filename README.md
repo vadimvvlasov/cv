@@ -6,51 +6,67 @@ Live: <https://vadimvvlasov.github.io/cv/>
 
 ## Tech Stack
 
-- Plain HTML5 + CSS3 (no frameworks, no JS)
-- Deployed via **GitHub Pages** (branch `main`)
-- Google Fonts: Sacramento, Merriweather, Montserrat
+- **React 18** + **TypeScript**
+- **Vite** — build tool
+- **Tailwind CSS v4** — utility-first styling
+- **Fonts:** Inter (UI), JetBrains Mono (metrics)
+- **Deployment:** GitHub Pages (static, `dist/` → root)
 
-## Structure
+## Features
 
+- 🎯 Scroll-spy active navigation (IntersectionObserver)
+- ✨ Fade-in + slide-up section animations with stagger
+- 🔢 Animated metric counters (count-up on scroll)
+- 📊 Skill proficiency progress bars
+- 🌗 Dark / Light mode toggle (persisted in localStorage)
+- 📋 Copy Email with toast notification
+- ↓ Print-optimised / Download PDF
+- 💼 Vertical timeline for experience
+- ♿ ARIA labels, keyboard navigation, semantic HTML
+- 📱 Responsive mobile layout (375px+)
+
+## Development
+
+```bash
+# Install
+npm install
+
+# Dev server (hot reload)
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
-.
-├── index.html          # Main page
-├── css/
-│   └── styles.css      # Styles (responsive, mobile-friendly)
-├── img/
-│   ├── vadim_vlasov.png
-│   ├── favicon_v.ico
-│   └── ...             # Decorative assets (clouds, mountains, icons)
-└── README.md
-```
-
-## Local Development
-
-1. Clone the repo:
-   ```bash
-   git clone https://github.com/vadimvvlasov/cv.git
-   cd cv
-   ```
-2. Open `index.html` in a browser (no build step required).
-3. For live-reload, use any static server, e.g.:
-   ```bash
-   python -m http.server 8000
-   ```
 
 ## Deploy
 
-Push to `main` — GitHub Pages deploys automatically:
+Push to `main` — GitHub Pages serves from repo root:
 
 ```bash
+npm run build
+cp -r dist/* .          # copy built files to root
 git add -A
-git commit -m "feat: <description>"
+git commit -m "build: update"
 git push origin main
 ```
 
 Changes appear at <https://vadimvvlasov.github.io/cv/> within 1–2 minutes.
 
-## Future Plans
+## File Structure
 
-- [ ] Migrate to a static site generator (Hugo / VitePress) for scalability
-- [ ] Add GeoCV portfolio project page when ready
-- [ ] Custom domain (vadimvlasov.com)
+```
+├── index.html              ← Vite entry + meta tags
+├── src/
+│   ├── App.tsx             ← Main component (all logic)
+│   ├── main.tsx            ← React entry
+│   ├── index.css           ← Tailwind import + custom keyframes
+│   └── vite-env.d.ts       ← TS declarations
+├── public/                 ← Static assets (images, favicon)
+├── package.json
+├── vite.config.ts          ← Vite + React + Tailwind plugins
+├── tsconfig.json           ← TypeScript config
+└── .gitignore
+```

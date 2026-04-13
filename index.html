@@ -1,216 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Vadim Vlasov — ML Engineer specializing in geospatial computer vision, satellite imagery segmentation, and production ML pipelines.">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/cv/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Vadim Vlasov — ML Engineer specialising in Geospatial Computer Vision, Satellite Imagery, and Production ML Pipelines. Open to remote opportunities worldwide." />
+    <meta name="keywords" content="ML Engineer, Computer Vision, Geospatial ML, ResUNet, Sentinel-2, PyTorch, TensorFlow, Airflow, AWS" />
+    <meta property="og:title" content="Vadim Vlasov — ML Engineer & Geospatial CV" />
+    <meta property="og:description" content="ML Engineer specialising in satellite imagery segmentation, crop classification, and production AWS pipelines." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://vadimvvlasov.github.io/cv/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Vadim Vlasov — ML Engineer" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://vadimvvlasov.github.io/cv/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <title>Vadim Vlasov — ML Engineer | Geospatial Computer Vision</title>
-
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" href="img/favicon_v.ico">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700;1,900&display=swap"
-        rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-</head>
-
-<body>
-
-    <!-- ==================== HERO ==================== -->
-    <div class="top-container">
-        <img class="top-cloud" src="img/cloud.png" alt="cloud">
-        <h1>Vadim Vlasov</h1>
-        <h2>ML Engineer <span class="divider">|</span> Computer Vision &amp; Geospatial ML</h2>
-        <p class="hero-subtitle">Satellite imagery segmentation, crop classification, production pipelines</p>
-        <img class="bottom-cloud" src="img/cloud.png" alt="cloud">
-        <img class="land" src="img/Mountain-Transparent-Background.png" alt="land">
-    </div>
-
-    <!-- ==================== ABOUT ==================== -->
-    <div class="middle-container">
-        <div class="profile">
-            <img class="profile-img" src="img/vadim_vlasov.png" alt="Vadim Vlasov">
-            <h2>About</h2>
-            <p class="intro">
-                ML Engineer specializing in end-to-end geospatial computer vision pipelines for satellite imagery —
-                from raw Sentinel-2 / HLS data to production-grade field boundary segmentation, crop classification,
-                and cadastral data integration.
-            </p>
-            <p class="intro">
-                Built a global ResUNet-A model (MCC&nbsp;=&nbsp;0.91) operating across 5+ continents without manual
-                data collection. Designed and deployed production ML pipelines on AWS (Airflow, EC2, S3) processing
-                35,000+ satellite image patches covering ~12&nbsp;M&nbsp;km² of agricultural land in Brazil.
-            </p>
-            <p class="intro">
-                Proven ability to translate research into production: transfer learning workflows (global → local),
-                memory optimisation (OOM fixes at scale), and customer-facing POC delivery across Brazil, Romania,
-                and Russia. Open to remote-worldwide opportunities in ML Engineering, Computer Vision, and Geospatial AI.
-            </p>
-        </div>
-
-        <hr>
-
-        <!-- ==================== KEY ACHIEVEMENTS ==================== -->
-        <div class="achievements">
-            <h2>Key Achievements</h2>
-            <div class="achievement-grid">
-                <div class="achievement-card">
-                    <h3>MCC = 0.91</h3>
-                    <p>Global field-boundary segmentation model (ResUNet-A) trained on 16.9 GB of auto-collected
-                       Sentinel-2 data across USA, Brazil, Russia, Baltics, Europe — zero manual labelling.</p>
-                </div>
-                <div class="achievement-card">
-                    <h3>35,000+ EOPatches</h3>
-                    <p>Production ML pipeline on Apache Airflow + AWS processing satellite imagery across 11 Brazilian
-                       states (~12 M km²) with fully automated STAC-based ingestion and GeoPackage output.</p>
-                </div>
-                <div class="achievement-card">
-                    <h3>33 h → 20 h</h3>
-                    <p>Eliminated OOM crashes in vectorisation pipeline via memray profiling, malloc_trim, in-place
-                       ops, ESRGAN session cleanup, and multiprocessing zonemerge with lazy loading.</p>
-                </div>
-                <div class="achievement-card">
-                    <h3>0.77 → 0.89 MCC</h3>
-                    <p>Transfer-learning fine-tuning: adapted global model to Brazil (0.77 → 0.89) and Argentina
-                       (MCC = 0.87) in a single training pass.</p>
-                </div>
-            </div>
-        </div>
-
-        <hr>
-
-        <!-- ==================== EXPERIENCE ==================== -->
-        <div class="experience">
-            <h2>Experience</h2>
-            <div class="experience-entry">
-                <h3>ML Engineer / Geospatial Computer Vision Engineer</h3>
-                <p class="company">Agromon <span class="dates">2023 – 2026</span></p>
-                <ul class="experience-bullets">
-                    <li>Built global field-boundary segmentation model (ResUNet-A, MCC = 0.91) on Sentinel-2 L2A data
-                        for 5+ countries — 16.9 GB of training data collected automatically, 5-fold CV, AdamW.</li>
-                    <li>Fine-tuned local models via transfer learning: Brazil MCC 0.77 → 0.89, Argentina MCC = 0.87,
-                        each in a single training pass.</li>
-                    <li>Designed and operated production ML pipeline on Apache Airflow + AWS (EC2, S3, Batch) processing
-                        35,000+ EOPatches across 11 Brazilian states (~12 M km²) — STAC ingestion → ResUNet-A + ESRGAN
-                        prediction → vectorisation → GeoPackage deliverables.</li>
-                    <li>Eliminated OOM crashes in vectorisation (9,439 patches) via memray profiling, malloc_trim,
-                        in-place tensor ops, ESRGAN session cleanup; multiprocessing zonemerge reduced São Paulo
-                        post-processing from 33 h to ~20 h.</li>
-                    <li>Developed crop-classification system (Transformer Encoder, PyTorch) with two-season corn
-                        detection (safra / safrinha), validated against Brazilian government statistics (CONAB / SIDRA).</li>
-                    <li>Delivered client-facing POCs for Brazil, Romania, and Russia: GeoPackage deliverables with
-                        field boundaries, crop types, farm-cadastre integration (SIGEF / SNCI), QGIS projects.</li>
-                    <li>Researched SOTA models for geospatial ML — Prithvi-EO-2.0 (IBM / NASA), Swin UNETR,
-                        SITSMamba — informed architecture decisions for the production pipeline.</li>
-                </ul>
-            </div>
-        </div>
-
-        <hr>
-
-        <!-- ==================== SKILLS ==================== -->
-        <div class="skills">
-            <h2>Skills</h2>
-
-            <div class="skill-category">
-                <h3>Deep Learning &amp; Computer Vision</h3>
-                <p>TensorFlow 2.15, PyTorch, ResUNet-A, Transformer Encoder, ESRGAN, U-Net, Semantic Segmentation,
-                   Transfer Learning, Data Augmentation, Cross-Validation</p>
-            </div>
-
-            <div class="skill-category">
-                <h3>Geospatial &amp; Remote Sensing</h3>
-                <p>eo-flow, eo-learn, GDAL, Rasterio, GeoPandas, Shapely, Higra Watershed, OpenCV, STAC
-                   (SpatioTemporal Asset Catalog), Sentinel-2 L2A, HLS (NASA), MapBiomas, GeoTIFF, GeoPackage</p>
-            </div>
-
-            <div class="skill-category">
-                <h3>Infrastructure &amp; MLOps</h3>
-                <p>Apache Airflow 2.10, AWS (EC2, S3, Batch), Docker, GitLab CI, TensorBoard, memray,
-                   Memory Profiling &amp; Optimisation, Multiprocessing</p>
-            </div>
-
-            <div class="skill-category">
-                <h3>Data &amp; General</h3>
-                <p>Python, SQL, Git, Linux, CI/CD, Feature Engineering, EDA, Flask, Django,
-                   Agricultural Data Analytics, English</p>
-            </div>
-        </div>
-
-        <hr>
-
-        <!-- ==================== PROJECTS ==================== -->
-        <div class="projects">
-            <h2>Selected Projects</h2>
-
-            <div class="project-card">
-                <h3>Global Field-Boundary Segmentation (ResUNet-A)</h3>
-                <p>Single model for 5+ continents — MCC = 0.91, extent accuracy = 0.913, Strict IoU = 0.917.
-                   16.9 GB of auto-collected Sentinel-2 data, 5-fold CV, AdamW, multi-head output
-                   (extent / boundary / distance maps).</p>
-            </div>
-
-            <div class="project-card">
-                <h3>Production Pipeline — Brazil (Airflow + AWS)</h3>
-                <p>End-to-end automated processing of 11 Brazilian states: STAC download → ResUNet-A + ESRGAN
-                   prediction → vectorisation → merge → zonemerge → GeoPackage. 35,000+ EOPatches, ~12 M km².
-                   Full cycles from 1 to 8 days per state.</p>
-            </div>
-
-            <div class="project-card">
-                <h3>Crop Classification — Transformer Encoder (PyTorch)</h3>
-                <p>Two-season corn detection (safra / safrinha) using hybrid approach: Transformer Encoder
-                   (5 layers, 2 attention heads) + MapBiomas logic + validation against CONAB / SIDRA statistics.
-                   WorldCereal baseline MCC = 85.8%.</p>
-            </div>
-
-            <div class="project-card">
-                <h3>Memory &amp; Performance Optimisation</h3>
-                <p>OOM fix at 9,439 EOPatches vectorisation: memray profiling, malloc_trim, in-place ops,
-                   ESRGAN session cleanup, multiprocessing zonemerge with lazy loading.
-                   São Paulo post-processing reduced from 33 h to ~20 h (1.5 M polygons).</p>
-            </div>
-        </div>
-
-        <hr>
-
-        <!-- ==================== EDUCATION ==================== -->
-        <div class="education">
-            <h2>Education</h2>
-            <div class="education-entry">
-                <h3>Ural Federal University (UrFU), Yekaterinburg</h3>
-                <p>Postgraduate studies (Aspirantura) — Pipeline transport, diagnostics &amp; modelling</p>
-                <p>MSc in Engineering</p>
-            </div>
-        </div>
-
-        <hr>
-
-        <!-- ==================== CONTACT ==================== -->
-        <div class="contact-me">
-            <h2>Get In Touch</h2>
-            <h3>Open to remote-worldwide opportunities</h3>
-            <p class="contact-message">
-                I'm currently looking for ML Engineer / Computer Vision / Geospatial ML positions.
-                Feel free to reach out for any questions or collaboration.
-            </p>
-            <a class="btn" href="mailto:datascientist.ekb@gmail.com">CONTACT ME</a>
-        </div>
-    </div>
-
-    <!-- ==================== FOOTER ==================== -->
-    <div class="bottom-container">
-        <a class="footer-link" href="https://www.linkedin.com/in/vadim-vlasov-181503b6/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="footer-link" href="https://github.com/vadimvvlasov" target="_blank" rel="noopener">GitHub</a>
-        <a class="footer-link" href="https://career.habr.com/vadimv-v-vlasov" target="_blank" rel="noopener">Habr Career</a>
-        <p class="copyright">&copy; 2026 Vadim Vlasov.</p>
-    </div>
-
-</body>
+    <script type="module" crossorigin src="/cv/assets/index-BqTKvcGo.js"></script>
+    <link rel="stylesheet" crossorigin href="/cv/assets/index-CmtsgzVp.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
 </html>
