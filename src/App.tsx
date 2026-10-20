@@ -16,12 +16,12 @@ interface Achievement {
 
 const achievements: Achievement[] = [
   {
-    metric: 'MCC = 0.91',
-    animTarget: 0.91,
-    prefix: 'MCC = ',
-    suffix: '',
+    metric: '10M km²',
+    animTarget: 10,
+    prefix: '',
+    suffix: 'M km²',
     icon: '🎯',
-    desc: 'Global field-boundary segmentation model (ResUNet-A) trained on 16.9 GB of auto-collected Sentinel-2 data across 5+ continents — zero manual labelling.',
+    desc: 'Field boundaries mapped for 23 US states and 14 Brazilian states in full, about 20M fields in the US alone.',
     color: 'emerald',
   },
   {
@@ -30,25 +30,25 @@ const achievements: Achievement[] = [
     prefix: '',
     suffix: '+',
     icon: '🛰️',
-    desc: 'Production ML pipeline on Apache Airflow + AWS processing satellite imagery across 11 Brazilian states (~12 M km²) with fully automated STAC-based ingestion.',
+    desc: 'Production ML pipeline stages on Apache Airflow + AWS with fully automated STAC-based ingestion of Sentinel-2 imagery.',
     color: 'blue',
   },
   {
-    metric: '33 h → 20 h',
-    animTarget: 20,
+    metric: '33 h → 18 h',
+    animTarget: 18,
     prefix: '33 h → ',
     suffix: ' h',
     icon: '⚡',
-    desc: 'Eliminated OOM crashes via memray profiling, malloc_trim, in-place ops, ESRGAN session cleanup, and multiprocessing zonemerge with lazy loading.',
+    desc: 'São Paulo post-processing (~1.5M fields): parallelised heavy steps and removed a duplicate one; memory leaks fixed by running steps in separate processes, peak memory 50 → 31 GB.',
     color: 'amber',
   },
   {
-    metric: '0.77 → 0.89 MCC',
+    metric: '0.81 → 0.89 MCC',
     animTarget: 0.89,
-    prefix: '0.77 → ',
+    prefix: '0.81 → ',
     suffix: '',
     icon: '📈',
-    desc: 'Transfer-learning fine-tuning: adapted global model to Brazil (0.77 → 0.89) and Argentina (MCC = 0.87) in a single training pass.',
+    desc: 'Field boundary model fine-tuned on local data: Brazil MCC 0.81 → 0.89, Argentina MCC = 0.87.',
     color: 'violet',
   },
 ];
@@ -56,14 +56,15 @@ const achievements: Achievement[] = [
 const experience = [
   {
     title: 'ML Engineer / Geospatial Computer Vision Engineer',
-    company: 'Agromon',
-    period: '2023 – 2026',
+    company: 'Agro Software (fieldstat.ai)',
+    period: '2021 – present',
     bullets: [
-      'Built global field-boundary segmentation model (ResUNet-A, MCC = 0.91) on Sentinel-2 L2A data for 5+ countries — 16.9 GB of training data collected automatically, 5-fold CV, AdamW.',
-      'Fine-tuned local models via transfer learning: Brazil MCC 0.77 → 0.89, Argentina MCC = 0.87, each in a single training pass.',
-      'Designed and operated production ML pipeline on Apache Airflow + AWS (EC2, S3, Batch) processing 35,000+ EOPatches across 11 Brazilian states (~12 M km²) — STAC ingestion → ResUNet-A + ESRGAN prediction → vectorisation → GeoPackage deliverables.',
-      'Eliminated OOM crashes in vectorisation (9,439 patches) via memray profiling, malloc_trim, in-place tensor ops, ESRGAN session cleanup; multiprocessing zonemerge reduced São Paulo post-processing from 33 h to ~20 h.',
-      'Developed crop-classification system (Transformer Encoder, PyTorch) with two-season corn detection (safra / safrinha), validated against Brazilian government statistics (CONAB / SIDRA).',
+      'Field-boundary segmentation (ResUNet-A) on Sentinel-2 L2A data, with training data collected automatically, 5-fold CV, AdamW.',
+      'Fine-tuned the model on local data: Brazil MCC 0.81 → 0.89, Argentina MCC = 0.87.',
+      'Developed production pipeline stages running on Apache Airflow + AWS (EC2, S3): 23 US and 14 Brazilian states processed in full, about 10M km², 35,000+ EOPatches. STAC ingestion → ResUNet-A + ESRGAN prediction → vectorisation → GeoPackage deliverables.',
+      'Eliminated OOM crashes in vectorisation (9,439 patches) via memray profiling, malloc_trim, in-place tensor ops, ESRGAN session cleanup; multiprocessing zonemerge reduced São Paulo post-processing from 33 h to 18 h, peak memory from 50 to 31 GB.',
+      'Made satellite image download 2.7x faster: profiling found needless pauses in the retry logic and a lock that made download threads run one at a time.',
+      'Developed crop-classification system (Transformer Encoder, PyTorch) with two-season corn detection (safra / safrinha); location and acquisition-week encoders raised macro F1 by 6.2%; validated against Brazilian government statistics (CONAB / SIDRA).',
       'Delivered client-facing POCs for Brazil, Romania, and Russia: GeoPackage deliverables with field boundaries, crop types, farm-cadastre integration (SIGEF / SNCI), QGIS projects.',
       'Researched SOTA models for geospatial ML — Prithvi-EO-2.0 (IBM / NASA), Swin UNETR, SITSMamba — informed architecture decisions for the production pipeline.',
     ],
@@ -86,7 +87,7 @@ const skillGroups: SkillGroup[] = [
   },
   {
     label: 'Infrastructure & MLOps',
-    skills: ['Apache Airflow 2.10', 'AWS (EC2, S3, Batch)', 'Docker', 'GitLab CI', 'TensorBoard', 'memray', 'Memory Profiling & Optimisation', 'Multiprocessing'],
+    skills: ['Apache Airflow 2.10', 'AWS (EC2, S3)', 'Docker', 'GitLab CI', 'TensorBoard', 'memray', 'Memory Profiling & Optimisation', 'Multiprocessing'],
   },
   {
     label: 'Data & General',
@@ -101,7 +102,7 @@ const skillLevels: Record<string, number> = {
   'Transfer Learning': 88,
   'Data Augmentation': 80,
   'Apache Airflow 2.10': 85,
-  'AWS (EC2, S3, Batch)': 80,
+  'AWS (EC2, S3)': 80,
   'Docker': 75,
   'memray': 70,
   'Memory Profiling & Optimisation': 72,
@@ -109,14 +110,14 @@ const skillLevels: Record<string, number> = {
 
 const projects = [
   {
-    title: 'Global Field-Boundary Segmentation (ResUNet-A)',
-    desc: 'Single model for 5+ continents — MCC = 0.91, extent accuracy = 0.913, Strict IoU = 0.917. 16.9 GB of auto-collected Sentinel-2 data, 5-fold CV, AdamW, multi-head output (extent / boundary / distance maps).',
+    title: 'Field-Boundary Segmentation (ResUNet-A)',
+    desc: 'Fine-tuned for Brazil (MCC 0.81 → 0.89) and Argentina (MCC 0.87). 16.9 GB of auto-collected Sentinel-2 data, 5-fold CV, AdamW, multi-head output (extent / boundary / distance maps).',
     tags: ['ResUNet-A', 'Sentinel-2', 'TensorFlow'],
     color: 'emerald',
   },
   {
-    title: 'Production Pipeline — Brazil (Airflow + AWS)',
-    desc: 'End-to-end automated processing of 11 Brazilian states: STAC download → ResUNet-A + ESRGAN prediction → vectorisation → merge → zonemerge → GeoPackage. 35,000+ EOPatches, ~12 M km². Full cycles from 1 to 8 days per state.',
+    title: 'Production Pipeline (Airflow + AWS)',
+    desc: 'Pipeline stages for 23 US and 14 Brazilian states: STAC download → ResUNet-A + ESRGAN prediction → vectorisation → merge → zonemerge → GeoPackage. 35,000+ EOPatches, about 10M km². Full cycles from 1 to 8 days per state.',
     tags: ['Airflow', 'AWS', 'STAC'],
     color: 'blue',
   },
@@ -128,7 +129,7 @@ const projects = [
   },
   {
     title: 'Memory & Performance Optimisation',
-    desc: 'OOM fix at 9,439 EOPatches vectorisation: memray profiling, malloc_trim, in-place ops, ESRGAN session cleanup, multiprocessing zonemerge with lazy loading. São Paulo post-processing reduced from 33 h to ~20 h (1.5 M polygons).',
+    desc: 'OOM fix at 9,439 EOPatches vectorisation: memray profiling, malloc_trim, in-place ops, ESRGAN session cleanup, multiprocessing zonemerge with lazy loading. São Paulo post-processing reduced from 33 h to 18 h (1.5 M polygons), peak memory 50 → 31 GB.',
     tags: ['memray', 'Python', 'Optimisation'],
     color: 'amber',
   },
@@ -282,7 +283,7 @@ function AnimatedMetric({ achievement }: { achievement: Achievement }) {
   } else if (achievement.metric.includes('→') && achievement.metric.includes('h')) {
     displayMetric = `33 h → ${formattedValue} h`;
   } else if (achievement.metric.includes('→') && achievement.metric.includes('MCC')) {
-    displayMetric = `0.77 → ${formattedValue}`;
+    displayMetric = `0.81 → ${formattedValue}`;
   } else {
     displayMetric = `${achievement.prefix}${formattedValue}${achievement.suffix}`;
   }
